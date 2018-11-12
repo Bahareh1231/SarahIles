@@ -1,0 +1,135 @@
+.bioAndRep {
+    background-color: $backgroundBeige;
+    padding-bottom: 15%;
+}
+
+.bioQuote {
+    width: 35%;
+    padding: 6% 0;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    blockquote {
+        margin: 0;
+    }
+  
+}
+
+.quoteAuthorBio {
+    font-style: normal;
+    margin-top: 15px;
+    p   {
+        margin: 0;
+        display: inline-block;
+    }
+    &:before {
+        content: "●";
+        margin-right: 10px;
+        color: $darkGold;
+        display: inline;
+    }
+}
+
+p.indent {
+    margin-left: 23.39px;
+}
+
+.bio3 {
+    width: 65%;
+    float: left;
+}
+
+.bio4 {
+    clear: both;
+    a {
+        text-decoration: none;
+        color: black;
+
+    }
+}
+
+// repertoire section
+
+.repertoire {
+    display: flex;
+}
+
+.repertoireList {
+    padding: 0;
+    list-style: none;
+    width: 50%;
+    li {
+        width: 100%;
+        margin: 40px 0 0 0;
+    }
+}
+
+.repPiece {
+    margin-bottom: 7px;
+    margin-top: 0;
+}
+
+
+
+@media (max-width: 750px) {
+
+    .bioAndRep {
+        padding-bottom: 50%;
+    }
+
+    .bio2 {
+        display: none;
+    }
+
+    .bio3 {
+        float: none;
+        width: auto;
+        display: none;
+    }
+
+    .bio4 {
+        display: none;
+    }
+
+    .readMoreBio {
+        display: inline-block;
+    }
+
+    .bioQuote {
+        display: none;
+    }
+
+    //repertoire section
+
+    .repertoire {
+        display: block;
+    }
+
+    .repertoireList {
+        width: 100%;
+    }
+
+    .repertoireList1 {
+        margin-bottom: 0;
+    }
+
+    .repertoireList2 {
+        display: none;
+        margin-top: 0;
+    }
+
+    .readMoreRep {
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .hideBioElement {
+        display: none;
+    }
+
+    .showBioElement {
+        display: inline-block;
+    }
+}

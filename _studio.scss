@@ -1,0 +1,112 @@
+.studioSection {
+    background-color: $backgroundBeige;
+    padding-bottom: 100px;
+}
+
+.studioLink {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    overflow: hidden;
+    padding-top: 30px;
+    margin-bottom: 50px;
+    &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 3px;
+        background: $lightGold;
+        transition: all 1s;
+    }
+    &:hover::after,
+    &:focus::after {
+        width: 100%;
+    }
+}
+
+.ellipsis {
+    display: none;
+}
+
+.studioSection .read {
+    display: none;
+}
+
+@keyframes studioLine {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+// MEDIA QUERIES
+
+@media (max-width: 750px) {
+
+    .studioSection {
+        padding-bottom: 40%;
+        h3 {
+            &:after {
+                content: '';
+                display: block;
+                width: 60%;
+                height: 3px;
+                background: $lightGold;
+                transition: all 1s;
+            }
+        }
+    }
+
+    .studio {
+        display: none;
+    }
+
+    .studioSection .read,
+    .readMoreSchool,
+    .more {
+        display: inline-block;
+    }
+
+    .ellipsis {
+        display: inline;
+    }
+
+    .school,
+    .schoolLink {
+        display: none;
+    }
+
+    .studioBlock2 {
+        margin-top: 34%;
+    }
+
+    .studio {
+        opacity: 1;
+        transition: all 1s;
+    }
+
+    .noOpacStudio {
+        opacity: 0;
+    }
+
+    .readMoreSchool {
+        display: inline-block;
+    }
+
+    .hideStudioElement {
+        display: none;
+    }
+
+    .showStudioElement {
+        display: inline-block;
+    }
+
+    .showElementInline {
+        display: inline;
+    }
+}

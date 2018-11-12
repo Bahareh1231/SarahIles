@@ -1,0 +1,321 @@
+.mediaSection {
+    position: relative;
+    margin: 200px 0;
+    .wrapper {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+}
+
+//mediaOverlay
+.mediaOverlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($color: white, $alpha: 0.9);
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.4s linear;
+}
+
+.videoContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+iframe {
+    width: 80%;
+    height: 90%;
+    position: relative;
+    z-index: 100;
+}
+
+.fadeOut {
+    animation: fadeOut 0.2s linear;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+// overlay that appears on click
+
+.videoOverlay {
+    display: none;
+}
+
+
+.mediaImage {
+    width:100%;
+    position: relative;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-end;
+    img {
+        width: 75%;
+        align-self: flex-end;
+    }
+}
+
+.mediaContent {
+    position: absolute;
+    bottom: 0;
+    z-index: 20;
+    background: white;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 75%;
+    h2 {
+        position: relative;
+        margin: 0;
+        padding-top: 0;
+    }
+}
+
+.mediaNav {
+    
+    margin-top: 15%;
+    width: 100%;
+}
+
+.mediaNavInner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.mediaNavButtons {
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    transform: translateY(-75px);
+    a {
+        margin: 0;
+        padding-right: 20px;
+        text-decoration: none;
+        transition: all 0.5s;
+        &:hover,
+        &:focus {
+            color: $darkGold;
+        }
+    }
+}
+
+.mediaBox {
+    display: flex;
+    color: black;
+    text-decoration: none;
+    transition: all 0.7s;
+    margin-top: 15px;
+    &:hover,
+    &:focus {
+        color: $darkGold;
+    }
+    &:hover .playButton,
+    &:focus .playButton {
+        border-left: 22px solid $darkGold;
+    }
+}
+
+.mediaBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+.playButton {
+    width: 0; 
+    height: 0; 
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 22px solid white;
+    position: absolute;
+    transition: all 0.7s;
+    bottom: 15%;
+    left: 8%;
+}
+
+.mediaText {
+    align-self: center;
+    width: 50%;
+    margin-left: 35px;
+    p {
+        margin: 0;
+    }
+}
+
+.mediaSecond {
+    align-self: flex-end;
+}
+
+// thumbnail
+
+.videoThumb {
+    width: 35%;
+    position: relative;
+}
+
+.thumbnail {
+    width: 100%;
+}
+
+//
+
+
+.hideElement {
+    display: flex;
+    display: none;
+}
+
+.--gold {
+    color: $darkGold;
+}
+
+.--black {
+    color: black;
+}
+
+// MEDIA QUERIES
+
+@media (max-width: 1040px) {
+    .mediaNav {
+        margin-top: 6%;
+    }
+}
+
+@media (max-width: 870px) {
+    .mediaNav {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .mediaBlock {
+        align-items: center;
+    }
+    
+    .mediaSecond {
+        align-self: auto;
+    }
+
+    .mediaText {
+        text-align: center;
+    }
+
+    .mediaSection {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 50%;
+        .wrapper {
+            order: 2;
+        }
+    }
+
+    .mediaFirst, 
+    .mediaSecond {
+        width: 75%;
+    }
+
+    .mediaSection .wrapper,
+    .mediaContent {
+        position: static;
+    }
+
+    .mediaNavButtons {
+        display: none;
+    }
+
+    .mediaNav {
+        margin: 0;
+        h2 {
+            padding-top: 40px;
+        }
+    }
+
+    .mediaSection {
+        margin-top: 0;
+        margin-bottom: 0;
+        overflow: hidden;
+        height: auto;
+    }
+
+    .mediaImage {
+        width: 100%;
+        position: relative;
+        order: 1;
+        overflow: hidden;
+        img {
+            width: 175%;
+            position: relative;
+            left: 29%;
+        }
+    }
+
+    iframe {
+        height: auto;
+    }
+
+    .mediaContent {
+        width: 100%;
+        .mediaBlock .mediaSecond {
+            display: block;
+        }
+    }
+
+    .mediaBox {
+        flex-direction: column;
+        margin-top: 90px;
+    }
+
+    .videoThumb {
+        width: 100%;
+    }
+
+    
+
+}
+
+@media (max-width: 500px) {
+    .mediaFirst, 
+    .mediaSecond {
+        width: 100%;
+    }
+
+    .mediaText {
+        width: 100%;
+        margin: 0;
+    }
+}

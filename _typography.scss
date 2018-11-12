@@ -1,0 +1,411 @@
+html {
+    font-size: 25px;
+    position: relative;
+    z-index: 100;
+}
+
+body {
+    -webkit-text-size-adjust: 100%;
+}
+
+.noScroll {
+    overflow: hidden !important;
+}
+
+.no-js {
+ visibility: hidden;
+ opacity: 0;
+}
+
+.js {
+ visibility: visible;
+ opacity: 1;
+}
+
+
+// frequent elements
+
+
+
+h2 {
+    padding-top: 100px;
+    margin-top: 0;
+    &:after {
+        content: '● ● ●';
+        color: $darkGold;
+        display: block;
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+    }
+}
+
+.hideElement {
+    display: none;
+}
+
+.noClick {
+    pointer-events: none;
+    cursor: default;
+}
+
+.ui-loader {
+    display: none;
+}
+
+
+
+// WRAPPER CLASSES
+
+.wrapper { 
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+.innerItems {
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+.innerWrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.more {
+    display: none;
+    color: black;
+    text-decoration: none;
+    padding-top: 30px;
+    padding-left: 0;
+    font-weight: 700;
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: $darkGold;
+    }
+}
+
+.read,
+.view {
+    margin-top: 20%;
+}
+
+
+// FONT FAMILIES AND STYLE CLASSES
+
+.--headerFont {
+    font-family: $headerFont;
+    letter-spacing: 1px;
+}
+
+.--bodyFont {
+    font-family: $bodyFont;
+}
+
+.--italic {
+    font-style: italic;
+}
+
+.--bold {
+    font-weight: 700;
+}
+
+.--uppercase {
+    text-transform: uppercase;
+}
+
+.--lineheight {
+    line-height: 25px;
+}
+
+// FONT-SIZE CLASSES
+
+.--quoteSize {
+    font-size: 1.262rem;
+}
+
+.--quoteAuthorSize {
+    font-size: 0.797rem;
+}
+
+.--smallQuoteSize {
+    font-size: 0.9rem;
+}
+
+.--smallQuoteAuthorSize {
+    font-size: 0.65rem;
+}
+
+.--navSize {
+    font-size: 0.6rem;
+}
+
+.--h2Size{
+    font-size: 2.4rem;
+}
+
+.--bodySize {
+    font-size: 0.65rem;
+}
+
+.--repComposerSize {
+    font-size: 0.9rem;
+}
+
+.--repPieceSize {
+    font-size: 0.73rem;
+}
+
+.--dateSize {
+    font-size: 3.276rem;
+}
+
+.--monthSize {
+    font-size: 1.67rem;
+}
+
+.--letterSpacingDate {
+    letter-spacing: 4px;
+}
+
+.--giantFont {
+    font-size:11.104rem;
+}
+
+.--calendarGalleryViewSize {
+    font-size: 1.028rem;
+}
+
+.--calendarLocationSize {
+    font-size: 0.8rem;
+}
+
+.--calendarDetailsSize {
+    font-size: 0.73rem;
+}
+
+.--mediaBulletsSize {
+    font-size: 1.193rem;
+}
+
+.--mediaNumbersSize {
+    font-size: 1.097rem;
+}
+
+.--mediaComposerSize {
+    font-size: 1rem;
+}
+
+.--mediaSongSize {
+    font-size: 0.708rem;
+}
+
+.--galleryNumbersSize {
+    font-size: 1.171rem;
+}
+
+.--galleryArrowsSize {
+    font-size: 1.185rem;
+}
+
+.--subSubSize {
+    font-size: 1.6rem;
+}
+
+.--linkContactInfoFooterSize {
+    font-size: 0.819rem;
+}
+
+.--footerArrowUp {
+    font-size: 1.8rem;
+}
+
+.shrink {
+    font-size: 0.85rem;
+    transition: all 0.5s ease;
+}
+
+
+//COLOR CLASSES
+
+.--white {
+    color: white;
+}
+
+.--black {
+    color: black;
+}
+
+.--fontWhite {
+    color: $fontWhite;
+}
+
+.--fontBlue {
+    color: $fontBlue;
+}
+
+.--lightBlack {
+    color: $mediaTextBlack;
+}
+
+
+// X that closes the overlay 
+
+.closeOverlay {
+    position: absolute;
+    z-index: 150;
+    right: 3%;
+    top: 0;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover .closeOverlayButton:before,
+    &:hover .closeOverlayButton:after {
+        background-color: $darkGold;
+    }
+}
+
+.closeOverlayButton {
+    position: relative;
+    &:before {
+        position: absolute;
+        content: ' ';
+        height: 33px;
+        display: block;
+        width: 2px;
+        background-color: black;
+        transform: rotate(45deg);
+        transition: all 0.5s;
+    }
+    &:after {
+        position: absolute;
+        content: ' ';
+        height: 33px;
+        display: block;
+        width: 2px;
+        background-color: black;
+        transform: rotate(-45deg);
+        transition: all 0.5s;
+    }
+}
+
+//scroll effects 
+.floatBefore {
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.slideLeft {
+    transform: translateX(-50px);
+    opacity: 0;
+}
+
+.dropDown {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 1.5s;
+}
+
+.galleryShrink {
+    transform: scale(0.7);
+    opacity: 0;
+}
+
+.floatAfter {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    transition: all 1s;
+}
+
+// MEDIA QUERIES
+
+@media (max-width: 1030px) {
+    .wrapper {
+        width: 85%;
+    }
+
+    .innerItems {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .--mediaComposerSize {
+        font-size: 0.8rem;
+    }
+
+    .headerQuote {
+    }
+}
+
+
+@media(max-width: 830px) {
+    .--giantFont {
+        font-size: 10.104rem;
+    }
+}
+
+
+
+@media (max-width: 750px) {
+
+    .wrapper {
+        width: 90%;
+    }
+
+    .innerItems {
+        padding-left: 5%;
+        padding-right: 0;
+    }
+
+
+    .--h2Size {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    .--bodySize {
+        font-size: 0.75rem;
+    }
+
+    .--quoteSize,
+    .headerQuote {
+        font-size: 0.7rem;
+    }
+
+    .--lineheight {
+        line-height: 30px;
+    }
+
+    .--quoteAuthorSize {
+        font-size: 0.7rem;
+    }
+
+    .--giantFont {
+        font-size: 9.14rem;
+    }
+
+    .--repPieceSize {
+        font-size: 0.75rem;
+    }
+
+    .--repComposerSize {
+        font-size: 0.85rem;
+    }
+
+    .--subSubSize {
+        font-size: 1.2rem;
+    }
+
+    .--linkContactInfoFooterSize {
+    font-size: 0.719rem;
+}
+
+}
+

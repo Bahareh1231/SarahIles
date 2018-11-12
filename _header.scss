@@ -1,0 +1,372 @@
+.header {
+    height: 85vh;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    z-index: 110;
+    max-height: 1600px;
+    .wrapper {
+        position: relative;
+        z-index: 100;
+    }
+}
+
+.heroImage {
+    position: absolute;
+    top: -5%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.headerLogo {
+    padding-top: 7%;
+    width: 40%;
+    img.logo {
+        width: 100%;
+    }
+}
+
+.headerText {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    padding-top: 15%;
+}
+
+// quote
+
+.headerQuote {
+    margin: 0
+}
+
+cite.headerQuoteSource {
+    margin-top: 20px;
+    text-align: right;
+    padding-right:50px;
+    font-style: normal;
+ 
+    &:before {
+        content: "●";
+        margin-right: 10px;
+        color: $darkGold;
+    }
+}
+
+
+// nav area
+
+
+.navList {
+    height: 15vh;
+    max-height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background: white;
+    list-style: none;
+    padding: 0;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.navLink {
+    text-decoration: none;
+    &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 3px;
+        background: $darkGold;
+        transition: width 0.8s;
+    }
+    &:hover::after,
+    &:focus::after {
+        width: 100%;
+    }
+}
+
+.navListItem {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.putNavListItemInPlace {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+// mobile nav overlay
+
+
+.overlayButton {
+    position: fixed;
+    top: -25px;
+    left: -12px;
+    z-index: 330;
+    height: 123px;
+    width: 123px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: none;
+    border-radius: 50%;
+    transition: all 1s;
+    &:before {
+        content: '';
+        height: 10px;
+        width: 27px;
+        background-color: white;
+        border-radius: 4px;
+        display: block;
+        margin-bottom: 10px;
+        transition: all 1s;
+        opacity: 1;
+        position: relative;
+        right: -37px;
+        bottom: 38px;
+    }
+    &:after {
+        content: '';
+        height: 10px;
+        width: 49px;
+        background-color: white;
+        border-radius: 4px;
+        display: block;
+        transition: all 1s;
+        opacity: 1;
+        position: relative;
+        right: -37px;
+        bottom: 38px;
+    }
+}
+
+.navOverlayOpened {
+    position: fixed;
+    &:before {
+        width: 49px;
+        background-color: $darkGold;
+        
+    }
+    &:after {
+        width: 27px;
+        background-color: $darkGold;
+    }
+}
+
+.navButtonScrollUp {
+    background-color: $darkGold;
+    &:before {
+        opacity: 1;
+        transition: all 0.2s;
+    }
+    &:after {
+        opacity: 1;
+        transition: all 0.2s;
+    }
+}
+
+
+.navOverlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($color: #ffffff, $alpha: 1.0);
+    opacity: 1;
+    z-index: 300;
+    display: none;
+    transition: all 0.5s;
+}
+
+.showNavOverlay {
+    display: block;
+}
+
+.navNoOpac {
+    opacity: 0;
+}
+
+.navOverlayWrapper {
+    width: 66%;
+    margin: 0 auto;
+}
+
+.overlayNavListItem {
+    margin-top: 39px;
+    display: none;
+}
+
+
+.overlayList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 82px;
+
+}
+
+
+
+.overlayNavLink {
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 1;
+    transition: all 0.5s;
+    &:hover,
+    &:focus {
+        color: $darkGold;
+    }
+}
+
+
+
+// MEDIA QUERIES
+
+@media (min-height: 1000px) and (max-width: 1800px) {
+    .header {
+        max-height: 20vh;
+    }
+}
+
+@media (min-height: 1000px) and (min-width: 1800px) {
+    .header {
+        max-height: 40vh;
+    }
+}
+
+
+@media (max-width: 1030px) {
+
+    .heroImage {
+        top: 0;
+        width: 114%;
+    }
+}
+
+
+
+@media (max-width: 850px) {
+    .header {
+        height: 90vh;
+    }
+    .heroImage {
+        left: initial;
+        right: -12%;
+        width: 135%;
+    }
+
+    .headerLogo {
+        padding-top: 16%;
+    }
+
+    .headerText {
+        padding-top: 10%;
+    }
+
+    .headerNav {
+        display: none;
+    }
+    
+    .overlayButton {
+        display: flex;
+    }
+
+    .hideButton {
+        opacity: 0;
+        pointer-events: none;
+        cursor: default;
+        &:before {
+            width: 0;
+        }
+        &:after {
+            width: 0;
+        }
+    }
+}
+
+@media (max-width: 770px) {
+    
+    .heroImage {
+        right: -26%;
+        width: 164%;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .header {
+        background-position: 45%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $backgroundBeige;
+        .wrapper {
+            padding-bottom: 70%;
+        }
+    }
+
+    .innerItems {
+        padding: 0;
+    }
+
+    .heroImage {
+        left: -92%;
+        width: 267%;
+        top: 0%;
+    }
+
+    cite.headerQuoteSource {
+        text-align: left;
+    }
+
+
+    .headerLogo {
+        position: relative;
+        top: 56px;
+        width: 65%;
+    }
+
+    
+    .headerText {
+        position: relative;
+        top: 28px;
+        width: 60%;
+    }
+
+    .headerQuoteSource {
+        padding: 0;
+        text-align: left;
+
+    }
+
+    @media (max-height: 450px) and (max-width: 750px) {
+
+        .header {
+            height: 100vh;
+        }
+        .headerQuote {
+            font-size: 0.8rem;
+        }
+    }
+
+    
+
+@media (min-height: 1000px) and (max-width: 800px) {
+    .heroImage {
+        width: 211%;
+        left: -64%;
+    }
+}
+
+}

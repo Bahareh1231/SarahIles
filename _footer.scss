@@ -1,0 +1,148 @@
+.footerSection {
+    position: relative;
+    background-image: url('/assets/footerhero.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .wrapper {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 9% 0;
+    }
+}
+
+.footerImage {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.upArrow {
+    height: 77px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: white;
+    position: relative;
+    z-index: 20;
+    img {
+        width: 30%;
+    }
+}
+
+.scrollTop {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 39px;
+    position: absolute;
+    &::before {
+        content: '';
+        display: block;
+        height: 0;
+        width: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid black;
+        transition: all 0.6s;
+    }
+    &::after {
+        content: '';
+        height: 30px;
+        width: 5px;
+        background: black;
+        display: block;
+        transition: all 0.6s;
+    }
+    &:hover:before,
+    &:focus:before {
+        border-bottom: 7px solid $darkGold;
+        transform: translateY(-14px);
+    }
+    &:hover:after,
+    &:focus:after {
+        transform: translateY(-14px);
+        background: $darkGold
+    }
+}
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    justify-self: flex-start;
+    z-index: 20;
+    img {
+        width: 70%;
+    }
+}
+
+.coffeeShopLink {
+    text-decoration: none;
+    transition: all 0.5s;
+    &:hover,
+    &:focus {
+        color: $lightGold;
+    }
+}
+
+.footerOverlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    z-index: 10;
+}
+
+
+a:focus {
+    outline: 0;
+}
+
+
+
+
+
+// MEDIA QUERIES
+
+@media (max-width: 500px) {
+    .footerSection {
+        background-position-x: 92%;
+        .wrapper {
+            margin: 20% 0 37% 0;
+        }
+    }
+
+    .footerImage {
+        position: absolute;
+        top: -7%;
+        right: -41%;
+        width: 364%;
+        bottom: initial;
+        left: initial;
+    }
+
+    .upArrow {
+        height: 78px;
+        width: 60px;
+    }
+    .footerContent {
+        text-align: center;
+    }
+}

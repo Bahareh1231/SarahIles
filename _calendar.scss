@@ -1,0 +1,243 @@
+.calendarSection {
+    background-color: $backgroundBlue;
+    position: relative;
+    padding-bottom: 5%;
+    .wrapper {
+        z-index: 20;
+        position: relative;
+    }
+    h2 {
+        &:after {
+            text-align: right;
+        }
+    }
+}
+
+.onStage {
+    position: absolute;
+    top: 200px;
+    bottom: 200px;
+    width: 50%;
+    z-index: 10;
+    p {
+        margin: 0;
+        line-height: 100%;
+    }
+}
+
+.calendarNav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-bottom: 100px;
+}
+
+.calendarButtons {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+ .calendarLinks {
+        text-decoration: none;
+        height: 64px;
+        font-weight: 700;
+    p {
+        margin-bottom: 0;
+        display: inline-block;
+        &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 3px;
+        background: $lightGold;
+        transition: width 0.8s;
+        }
+        &:hover::after,
+        &:focus::after {
+        width: 100%;
+        }
+    }
+}
+
+.goldUnderLine p::after {
+    width: 100%;
+}
+
+.view1516para,
+.view1718para {
+    transition: all 0.5s ease;
+}
+
+
+
+// calendar content area
+
+.calendarContent {
+    display: flex;
+}
+
+.calendarList {
+    list-style-type: none;
+    padding: 0;
+    width: 50%;
+    opacity: 1;
+    transition: all 1s;
+    p {
+        margin: 0;
+    }
+}
+
+.calendarListContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+
+.calendarItem {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 70px;
+    width: 95%;
+    padding-right: 30px;
+}
+
+.calendarDate {
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-between;
+    height: 100%;
+}
+
+.upperCalendarDate {
+    line-height: 85%;
+    text-align: center;
+}
+
+.lowerCalendarDate {
+    line-height: 70%;
+    text-align: center;
+}
+
+.calendarText {
+    margin-left: 20px;
+}
+
+.fadeOut {
+    opacity: 0;
+}
+
+.hideElement {
+    display: none;
+}
+
+// MEDIA QUERIES
+
+@media (max-width: 960px) {
+    .calendarItem {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calendarText {
+        text-align: center;
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .calendarSection .wrapper {
+        width: 95%;
+    }
+
+    .onStage {
+    position: absolute;
+        top: 700px;
+    width: 100%;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    p {
+        transform: rotate(-90deg);
+        position: absolute;
+        line-height: 0;
+        }
+    }
+
+    .onOnStage {
+        right: 29%;
+        bottom: 25%;
+    }
+
+    .stageOnStage {
+        top: 0;
+        right: -17%;
+    }
+
+    .calendarContent {
+        display: block;
+    }
+
+    .calendarList {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .calendarItem {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .calendarText {
+        text-align: center;
+        margin: 0;
+        p {
+            margin-top: 15px;
+        }
+    }
+
+    .calendarDate {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+    .hideCal {
+        display: none;
+    }
+    
+    .noOpacCal {
+        opacity: 0;
+    }
+
+    .hideElement {
+        display: none;
+    }
+
+    .readMoreCal {
+        display: inline-block;
+        color: white;
+        margin-bottom: 41%;
+        &:after {
+            background-color: $lightGold;
+        }
+    }
+}
+
+
+
